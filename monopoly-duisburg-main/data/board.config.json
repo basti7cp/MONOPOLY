@@ -1,0 +1,80 @@
+{
+  "title": "Duisburg Deal",
+  "alternativeTitle": "Stahlstadt Tycoon",
+  "alternativeTitles": [
+    "Duisburg Deal Private Edition",
+    "Stahlstadt Tycoon",
+    "Private Duisburg City Edition"
+  ],
+  "usage": "Privater, nicht-kommerzieller Fan-Prototyp fuer Freunde. Keine oeffentliche oder kommerzielle Nutzung.",
+  "theme": "Duisburg/Ruhrpott-Brettspiel mit Stadt-, Hafen-, Stahl-, Kiez- und Industriekultur-Motiven.",
+  "description": "Browserbasierter Brettspiel-Prototyp mit 40 Feldern, zentraler Board Base, nummerierten Tile-PNGs und freigestellten Spiel-Tokens.",
+  "designStyle": "Cinematic Duisburg City Edition: hochwertiger Foto-Collage-Look, klare Brettspielstruktur, starke Kontraste und urbane Duisburg-Atmosphaere statt Cartoon, Comic oder Clipart.",
+  "visualReference": "Board Base als visuelle Referenz: Duisburg-Foto-Collage mit Innenhafen, Tiger & Turtle, Landschaftspark, Skyline, Kiez und Ruhrgebiets-Industriekultur.",
+  "textRendering": {
+    "mode": "frontend",
+    "rule": "Feldnamen, Preise, Karteninhalte, UI-Texte und Labels werden im Frontend gerendert.",
+    "assetGuideline": "Neue Bildassets sollen keine eingebrannten lesbaren Texte enthalten und ausreichend freie Flaechen fuer UI-Text lassen."
+  },
+  "boardSize": 40,
+  "layout": {
+    "type": "square-perimeter",
+    "grid": "11x11",
+    "cornerIndexes": [0, 10, 20, 30],
+    "spacesPerSideIncludingCorners": 11,
+    "centerAsset": "assets/board/board_base.png",
+    "monopolyLikeDistribution": {
+      "properties": 22,
+      "stationsOrMobility": 4,
+      "utilities": 2,
+      "taxes": 2,
+      "events": 3,
+      "communities": 3,
+      "corners": 4
+    }
+  },
+  "palette": {
+    "boardCream": "#f5eddc",
+    "fieldCream": "#fff8ec",
+    "deepGreen": "#0f5a3d",
+    "blackLine": "#111111",
+    "anthracite": "#252a2c",
+    "goldAccent": "#b8924b",
+    "mutedCityBlue": "#3d6375",
+    "eventOrange": "#e8820c",
+    "communityGreen": "#2d7a4f",
+    "photoOverlayDark": "#101820",
+    "steelBlue": "#2f5f73",
+    "harborBlue": "#1f7a9d",
+    "rustOrange": "#c7652d",
+    "concreteGray": "#6f777d",
+    "softCream": "#f5ead3",
+    "mutedGreen": "#6f9a73"
+  },
+  "colorGroups": {
+    "brown": "#8a5a3c",
+    "lightBlue": "#8fd0e8",
+    "pink": "#d84f9a",
+    "orange": "#f28c28",
+    "red": "#cf3030",
+    "yellow": "#f2d83b",
+    "green": "#2ca65a",
+    "darkBlue": "#244f9e"
+  },
+  "contentStatus": {
+    "boardSpaces": "40 Felder sind modelliert und werden validiert.",
+    "tiles": "40 nummerierte Tile-PNGs von 0 bis 39 sind eingebunden.",
+    "boardBase": "Die zentrale Board Base ist zugeschnitten und eingebunden.",
+    "tokens": "8 freigestellte Token-PNGs sind vorhanden und im Frontend registriert.",
+    "cards": "Ereignis- und Gemeinschaftskarten brauchen noch finale Texte und Regeln.",
+    "gameplay": "Wuerfeln, Kaufen, Miete, Besitz, Haeuser/Hotels und Balancing sind die naechsten Logikschritte."
+  },
+  "todos": [
+    "Finale Ortsnamen, Preise, Mieten und Farbgruppen mit eigenstaendiger Regelbalance festlegen.",
+    "Ereignis- und Gemeinschaftskarten als Datenmodell mit Texten, Effekten und Zielgruppen ergaenzen.",
+    "Wuerfellogik, Zugbewegung, Kauf, Miete, Besitzstatus, Hypotheken und Spielerzustand implementieren.",
+    "Haeuser-/Hotel- oder Ausbau-Mechanik fuer die Grundstuecke entwerfen und balancieren.",
+    "Finale Asset-Qualitaet fuer Karten, UI-Elemente, Wuerfel und optionale Detailbilder angleichen.",
+    "Mobile Felddetailansicht, Spielprotokoll und klare Aktionsbuttons ausbauen."
+  ]
+}

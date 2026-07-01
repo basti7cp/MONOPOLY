@@ -1,0 +1,396 @@
+{
+  "project": "Duisburg Deal",
+  "alternativeTitle": "Stahlstadt Tycoon",
+  "styleVersion": "2.0-cinematic-private-fan",
+  "usage": "Private, non-commercial fan prototype for friends. Existing local fan reference assets may be used for this private prototype; future assets should avoid official logos, downloaded original artwork and embedded readable text.",
+  "styleGuidelines": {
+    "direction": "Cinematic Duisburg City Edition",
+    "visualLanguage": "Premium photo-collage board game look with Duisburg city motifs, industrial Ruhr area atmosphere, clear cream board surfaces, sharp anthracite borders and rich urban contrast.",
+    "preferredMotifs": [
+      "Innenhafen",
+      "Tiger & Turtle",
+      "Landschaftspark",
+      "Rhein and Ruhr water motifs",
+      "steel and harbor culture",
+      "Duisburg skyline and neighborhoods"
+    ],
+    "palette": {
+      "boardCream": "#f5eddc",
+      "fieldCream": "#fff8ec",
+      "deepGreen": "#0f5a3d",
+      "blackLine": "#111111",
+      "anthracite": "#252a2c",
+      "goldAccent": "#b8924b",
+      "mutedCityBlue": "#3d6375",
+      "eventOrange": "#e8820c",
+      "communityGreen": "#2d7a4f"
+    },
+    "do": [
+      "Use cinematic photo-inspired compositions.",
+      "Keep assets readable at small board-game tile sizes.",
+      "Leave clear blank areas for frontend-rendered text.",
+      "Keep transparent backgrounds for tokens and isolated UI assets."
+    ],
+    "avoid": [
+      "Cartoon, comic, clipart or generic icon looks for future cinematic assets.",
+      "Readable text baked into generated images.",
+      "Official logos, official board game artwork or copyrighted characters.",
+      "Busy details that compete with frontend labels and prices."
+    ]
+  },
+  "masterStylePrompt": "Create a premium modern Duisburg city edition board game asset for a private, non-commercial fan prototype. Visual style: cinematic photo-collage and photo-realistic city-edition look, not cartoon, comic or clipart. Use cream board surfaces (#f5eddc, #fff8ec), sharp anthracite and black borders (#252a2c, #111111), deep green accents (#0f5a3d), warm gold accents (#b8924b), muted city blue (#3d6375), event orange (#e8820c) and community green (#2d7a4f). Motifs may reference Duisburg atmosphere such as Innenhafen, Tiger & Turtle, Landschaftspark, Rhein/Ruhr water, steel, harbor culture, skyline and neighborhoods. Keep compositions high contrast, polished, readable at small board-game sizes and leave clean blank areas for frontend-rendered text. No official logos, no copyrighted characters, no downloaded original artwork, no embedded readable text.",
+  "assets": [
+    {
+      "id": "boardBase",
+      "category": "board",
+      "label": "Spielbrett / Board Base",
+      "path": "assets/board/board_base.png",
+      "status": "generated",
+      "prompt": "Create a square 2D board game board base inspired by Duisburg, Germany, but do not copy Monopoly. The board should have a clean cream-colored center area and a path of empty rectangular property spaces around the edge. Use a modern cartoon style with subtle industrial Ruhr area details: harbor cranes, river waves, steel beams, brick textures and city silhouettes. No text, no numbers, no logos. Top-down view, symmetrical square board, high resolution, ready for a browser game UI."
+    },
+    {
+      "id": "cornerStart",
+      "category": "board",
+      "label": "Start-Eckfeld",
+      "path": "assets/board/corner_start.png",
+      "status": "planned",
+      "prompt": "Create a square corner tile for a board game start field. Modern 2D cartoon style inspired by Duisburg and the Ruhr area. Use a welcoming city motif with river waves, a subtle forward arrow and small industrial design accents. Cream background, dark border, steel blue and rust orange accents, no text, no logos."
+    },
+    {
+      "id": "cornerJail",
+      "category": "board",
+      "label": "Gefängnis / Nur zu Besuch",
+      "path": "assets/board/corner_jail.png",
+      "status": "planned",
+      "prompt": "Create a square corner tile for a board game jail or visiting field. Friendly cartoon board game style, inspired by an urban Ruhr area setting. Show a stylized small jail cell or bars in a playful non-threatening way. Cream background, dark border, steel blue and gray tones, no text, no logos."
+    },
+    {
+      "id": "cornerFreeParking",
+      "category": "board",
+      "label": "Frei parken",
+      "path": "assets/board/corner_free_parking.png",
+      "status": "planned",
+      "prompt": "Create a square corner tile for a board game free parking style field. Modern cartoon board game style inspired by a German city. Show a simple urban parking motif with subtle Ruhr area flavor. Cream background, dark border, steel blue and soft gray accents, no text, no logos."
+    },
+    {
+      "id": "cornerGoToJail",
+      "category": "board",
+      "label": "Gehe ins Gefängnis",
+      "path": "assets/board/corner_go_to_jail.png",
+      "status": "planned",
+      "prompt": "Create a square corner tile for a board game 'go to jail' style field. Modern 2D cartoon style, playful but clear, with a directional motion cue leading toward a stylized jail icon. Cream background, dark border, steel blue, rust orange and gray accents, no text, no logos."
+    },
+    {
+      "id": "propertyBase",
+      "category": "tiles",
+      "label": "Standard-Grundstücksfeld",
+      "path": "assets/tiles/tile_property_base.png",
+      "status": "planned",
+      "prompt": "Create a single rectangular board game property tile asset. It should be empty and reusable, with a cream background, thin dark border, and a colored header strip at the top. Modern 2D cartoon board game style, clean, readable, no text, no numbers, no logos, transparent background."
+    },
+    {
+      "id": "station",
+      "category": "tiles",
+      "label": "Bahnhof-Feld",
+      "path": "assets/tiles/tile_station.png",
+      "status": "planned",
+      "prompt": "Create a rectangular board game tile for a station or transport property. Show a small clean train-related symbol area while leaving room for later text placement. Cream background, dark border, modern 2D cartoon style, no text, no logos, transparent background."
+    },
+    {
+      "id": "utility",
+      "category": "tiles",
+      "label": "Werk / Versorgung",
+      "path": "assets/tiles/tile_utility.png",
+      "status": "planned",
+      "prompt": "Create a rectangular board game tile for a utility or works field. Use a clean cream background, dark border and a simple icon space for infrastructure such as power, water or city services. Modern 2D cartoon board game style, no text, no logos, transparent background."
+    },
+    {
+      "id": "event",
+      "category": "tiles",
+      "label": "Ereignis-Feld",
+      "path": "assets/tiles/tile_event.png",
+      "status": "planned",
+      "prompt": "Create a square board game event tile icon inspired by Duisburg/Ruhr area. Show a stylized question mark made from steel beams and river waves. Modern 2D cartoon style, cream background, dark border, no text, no logo, transparent background."
+    },
+    {
+      "id": "community",
+      "category": "tiles",
+      "label": "Gemeinschafts-Feld",
+      "path": "assets/tiles/tile_community.png",
+      "status": "planned",
+      "prompt": "Create a square board game community tile icon inspired by Duisburg neighborhood life. Show small friendly urban elements: apartment houses, a tram, a tree, and a small river wave symbol. Modern 2D cartoon style, cream background, dark border, no text, no logos, transparent background."
+    },
+    {
+      "id": "tax",
+      "category": "tiles",
+      "label": "Steuer-Feld",
+      "path": "assets/tiles/tile_tax.png",
+      "status": "planned",
+      "prompt": "Create a rectangular board game tax tile in a playful city board game style. Use a simple money or receipt-related symbol with industrial Ruhr area design touches. Cream background, dark border, modern 2D cartoon style, no text, no logos, transparent background."
+    },
+    {
+      "id": "harbor",
+      "category": "icons",
+      "label": "Hafen-Icon",
+      "path": "assets/icons/icon_harbor.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a harbor crane with a river and containers, inspired by Duisburg inland harbor. Steel blue and rust orange color palette, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "steelworks",
+      "category": "icons",
+      "label": "Stahlwerk-Icon",
+      "path": "assets/icons/icon_steelworks.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon inspired by an old steelworks or blast furnace structure, with pipes, industrial towers and subtle warm highlights. Ruhr area industrial heritage vibe, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "river",
+      "category": "icons",
+      "label": "Fluss-Icon",
+      "path": "assets/icons/icon_river.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of stylized river waves with a subtle urban or harbor feeling. Friendly board game icon style, blue tones, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "tram",
+      "category": "icons",
+      "label": "Straßenbahn-Icon",
+      "path": "assets/icons/icon_tram.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a modern tram, inspired by German city transport. Friendly board game style, simple and readable, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "trainStation",
+      "category": "icons",
+      "label": "Bahnhof-Icon",
+      "path": "assets/icons/icon_train_station.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a German central train station with a train front and platform roof. Modern board game style, steel blue and cream colors, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "cityHall",
+      "category": "icons",
+      "label": "Rathaus-Icon",
+      "path": "assets/icons/icon_city_hall.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a city hall building inspired by a German urban administration building. Friendly board game style, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "tigerTurtle",
+      "category": "icons",
+      "label": "Tiger & Turtle-inspiriertes Icon",
+      "path": "assets/icons/icon_tiger_turtle.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon inspired by a walkable rollercoaster-like landmark sculpture on a hill. Minimal but recognizable, modern board game icon style, steel blue and light gray colors, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "landschaftspark",
+      "category": "icons",
+      "label": "Landschaftspark-Icon",
+      "path": "assets/icons/icon_landschaftspark.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon inspired by an old steelworks park with blast furnace shapes, pipes, stairs and greenery. Ruhr area industrial heritage vibe, steel blue, rust orange and green accents, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "innerHarbor",
+      "category": "icons",
+      "label": "Innenhafen-Icon",
+      "path": "assets/icons/icon_inner_harbor.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a modern inner harbor waterfront with water, brick buildings, small boats and lights. Friendly German city board game style, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "zoo",
+      "category": "icons",
+      "label": "Zoo-Icon",
+      "path": "assets/icons/icon_zoo.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon representing a zoo in a friendly and generic way, such as a gate, paw print or stylized animal silhouette. Board game icon style, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "university",
+      "category": "icons",
+      "label": "Universität-Icon",
+      "path": "assets/icons/icon_university.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon representing a university or campus building in a modern German city. Friendly board game style, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "stadiumGeneric",
+      "category": "icons",
+      "label": "Stadion-Icon",
+      "path": "assets/icons/icon_stadium_generic.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon icon of a generic football stadium exterior. Friendly board game style, readable at small size, isolated object, transparent background, no text, no logos, no club branding."
+    },
+    {
+      "id": "zebra",
+      "category": "tokens",
+      "label": "Spielfigur Zebra",
+      "path": "assets/tokens/token_zebra.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the zebra mascot token as an individual PNG."
+    },
+    {
+      "id": "car",
+      "category": "tokens",
+      "label": "Spielfigur Auto",
+      "path": "assets/tokens/token_car.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the silver car token as an individual PNG."
+    },
+    {
+      "id": "van",
+      "category": "tokens",
+      "label": "Spielfigur Transporter",
+      "path": "assets/tokens/token_van.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the silver van token as an individual PNG."
+    },
+    {
+      "id": "bottle",
+      "category": "tokens",
+      "label": "Spielfigur Flasche",
+      "path": "assets/tokens/token_bottle.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the bottle token as an individual PNG."
+    },
+    {
+      "id": "fries",
+      "category": "tokens",
+      "label": "Spielfigur Pommes",
+      "path": "assets/tokens/token_fries.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the fries token as an individual PNG."
+    },
+    {
+      "id": "ship",
+      "category": "tokens",
+      "label": "Spielfigur Schiff",
+      "path": "assets/tokens/token_ship.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the cargo ship token as an individual PNG."
+    },
+    {
+      "id": "scooter",
+      "category": "tokens",
+      "label": "Spielfigur Roller",
+      "path": "assets/tokens/token_scooter.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the scooter token as an individual PNG."
+    },
+    {
+      "id": "knife",
+      "category": "tokens",
+      "label": "Spielfigur Messer",
+      "path": "assets/tokens/token_knife.png",
+      "status": "generated",
+      "prompt": "Use the provided private fan prototype token sheet and crop the knife token as an individual PNG."
+    },
+    {
+      "id": "eventFront",
+      "category": "cards",
+      "label": "Ereigniskarte Vorderseite",
+      "path": "assets/cards/event_card_front.png",
+      "status": "planned",
+      "prompt": "Create a vertical board game card front design for an event card inspired by Duisburg and the Ruhr area. Cream paper texture, steel blue border, small icons of river waves, steel beams and harbor cranes. Empty center area for text. Modern cartoon board game style, no readable text, no logos."
+    },
+    {
+      "id": "eventBack",
+      "category": "cards",
+      "label": "Ereigniskarte Rückseite",
+      "path": "assets/cards/event_card_back.png",
+      "status": "planned",
+      "prompt": "Create a vertical board game card back design inspired by Duisburg industrial harbor. Pattern of small harbor cranes, steel beams, river waves and city lights. Steel blue, rust orange and cream color palette. Modern cartoon board game style, no text, no logos."
+    },
+    {
+      "id": "communityFront",
+      "category": "cards",
+      "label": "Gemeinschaftskarte Vorderseite",
+      "path": "assets/cards/community_card_front.png",
+      "status": "planned",
+      "prompt": "Create a vertical board game card front design for a community card inspired by Duisburg neighborhoods. Cream paper texture, warm border, small icons of houses, tram, river, trees and city life. Empty center area for text. Modern cartoon board game style, no readable text, no logos."
+    },
+    {
+      "id": "communityBack",
+      "category": "cards",
+      "label": "Gemeinschaftskarte Rückseite",
+      "path": "assets/cards/community_card_back.png",
+      "status": "planned",
+      "prompt": "Create a vertical board game card back design inspired by neighborhood life in a Ruhr area city. Pattern with small houses, trees, tram symbols and river waves. Warm cream, steel blue and muted green palette. Modern cartoon board game style, no text, no logos."
+    },
+    {
+      "id": "buttonNormal",
+      "category": "ui",
+      "label": "UI Button Normal",
+      "path": "assets/ui/button_normal.png",
+      "status": "planned",
+      "prompt": "Create a clean rounded rectangular game UI button asset in a modern cartoon board game style. Steel blue base, subtle shading, soft cream highlights, readable and friendly, no text, transparent background."
+    },
+    {
+      "id": "buttonHover",
+      "category": "ui",
+      "label": "UI Button Hover",
+      "path": "assets/ui/button_hover.png",
+      "status": "planned",
+      "prompt": "Create a clean rounded rectangular game UI button hover asset in a modern cartoon board game style. Slightly brighter than the normal version, steel blue with soft cream highlights, readable and friendly, no text, transparent background."
+    },
+    {
+      "id": "moneyIcon",
+      "category": "ui",
+      "label": "Geld-Icon",
+      "path": "assets/ui/money_icon.png",
+      "status": "planned",
+      "prompt": "Create a clean 2D cartoon money icon for a board game UI. Friendly, simple, readable at small size, inspired by property and city economy, isolated object, transparent background, no text, no logos."
+    },
+    {
+      "id": "dice1",
+      "category": "ui",
+      "label": "Würfel 1",
+      "path": "assets/ui/dice_1.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing one pip. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    },
+    {
+      "id": "dice2",
+      "category": "ui",
+      "label": "Würfel 2",
+      "path": "assets/ui/dice_2.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing two pips. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    },
+    {
+      "id": "dice3",
+      "category": "ui",
+      "label": "Würfel 3",
+      "path": "assets/ui/dice_3.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing three pips. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    },
+    {
+      "id": "dice4",
+      "category": "ui",
+      "label": "Würfel 4",
+      "path": "assets/ui/dice_4.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing four pips. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    },
+    {
+      "id": "dice5",
+      "category": "ui",
+      "label": "Würfel 5",
+      "path": "assets/ui/dice_5.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing five pips. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    },
+    {
+      "id": "dice6",
+      "category": "ui",
+      "label": "Würfel 6",
+      "path": "assets/ui/dice_6.png",
+      "status": "planned",
+      "prompt": "Create a clean board game die face showing six pips. Modern cartoon style, slightly glossy, cream and steel blue palette, transparent background."
+    }
+  ]
+}
