@@ -1,2 +1,0 @@
-# MONOPOLY
-Monopoly Duisburg
