@@ -51,7 +51,7 @@ const spaces = [
 
 export const boardSpaces = spaces.map((space) => ({
   ...space,
-  tileImage: `/assets/tiles/${space.index}.png`
+  tileImage: `assets/tiles/${space.index}.png`
 }));
 
 export const demoPlayers = [
