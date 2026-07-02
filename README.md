@@ -1,136 +1,83 @@
-[README.md](https://github.com/user-attachments/files/29573304/README.md)
-# Monopoly Duisburg
+# Duisburg Deal / Stahlstadt Tycoon
 
-**Monopoly Duisburg** ist ein privates, nicht-kommerzielles Browser-Spielprojekt für mich und meine Freunde. Eine Duisburg-Version eines Monopoly-artigen Brettspiels: klassischer 40-Felder-Aufbau, Duisburger Straßen/Orte, Bahnhofs-/Mobilitätsfelder, Werkersatz, Ereignis- und Gemeinschaftskarten sowie eigene Spielfiguren.
+Privater, nicht-kommerzieller Fan-Prototyp eines browserbasierten Duisburg-Brettspiels fuer Freunde. Das Projekt arbeitet mit einer Monopoly-aehnlichen Brettspielstruktur, nutzt aber eine eigene lokale Gestaltung, eigene Daten und eine austauschbare Asset-Konfiguration.
 
-> Wichtig: Dieses Repository enthält keine offiziellen Monopoly-Grafiken, keine offiziellen Logos, keine heruntergeladenen Originalassets und keine Vereins-/Markenlogos. Die Gestaltung ist privat, eigenständig erstellt und nur im Freundeskreis genutzt.
+## Projektziel
 
----
+- Quadratisches Spielbrett mit 40 Feldern von `0` bis `39`.
+- Duisburg-/Ruhrpott-Thema mit Hafen, Stahl, Rhein/Ruhr, Kiez, Stadtteilen und Stadtleben.
+- Cinematic Duisburg City Edition: hochwertiger Foto-Collage-Look statt Cartoon-, Comic- oder Clipart-Stil.
+- Texte wie Feldnamen, Preise, Karteninhalte und UI-Beschriftungen werden im Frontend gerendert.
+- Assets bleiben ueber zentrale Konfigurationen austauschbar und pruefbar.
 
-## Designrichtung — Cinematic Duisburg City Edition
+## Aktueller Stand
 
-Der Zielstil ist **cinematic photo-collage**, inspiriert von modernen Monopoly-Stadteditions-Brettspielen (z.B. Berlin, Hamburg), aber mit eigenem Duisburg-Charakter.
+- Vanilla-JS-Prototyp ohne Frontend-Framework.
+- 11x11-CSS-Grid mit 40 nummerierten Aussenfeldern.
+- 40 Tile-PNGs unter `assets/tiles/` von `0.png` bis `39.png`.
+- Board Base als zugeschnittene Mittelgrafik unter `assets/board/board_base.png`.
+- 8 freigestellte Token-PNGs unter `assets/tokens/`.
+- Zentrale Asset-Registry in `src/config/assetMap.js`.
+- Datenmodell fuer 40 Spielfelder in `src/data/boardSpaces.js`.
+- Validierung fuer Board-Daten, Asset-Manifest, Tile-Dateien, Board Base und Tokens.
 
-### Was das bedeutet
-
-- **Brett-Zentrum**: Nahtlose Photo-Collage aus realen Duisburg-Motiven — Innenhafen mit Wasserreflexionen, Tiger & Turtle Skulptur, Landschaftspark Duisburg-Nord bunt beleuchtet, Marxloh Straßenszene, Vulkanstraße Atmosphäre, Rhein-Skyline in der Abenddämmerung.
-- **Feldtiles**: Cremefarbener Hintergrund (`#f5eddc`), scharfe anthrazit/schwarze Linien, farbige Gruppen-Leiste ganz oben, kleines realistisches Ortsfoto im mittleren Bereich.
-- **Ecktiles**: Eigenständig gestaltet, premium, passend zum cinematic Stil.
-- **Karten**: Clean, bold, farbig — Ereignisfeld orange (`#e8820c`), Gemeinschaftsfeld grün (`#2d7a4f`).
-- **UI**: High-contrast, anthrazit/creme/grün, kein überladener Stil.
-
-### Was explizit NICHT der Zielstil ist
-
-- ❌ Cartoon-Illustrationen oder Icon-Spielzeugstil
-- ❌ Clipart-ähnliche Elemente
-- ❌ Verspielt-bunte Comic-Ästhetik
-- ❌ Lesbare Texte in generierten Bildassets
-- ❌ Offizielle Logos oder Markenzeichen
-
-### Farbpalette
-
-| Token | Hex | Verwendung |
-|---|---|---|
-| `boardCream` | `#f5eddc` | Brett-Hintergrund, Felder |
-| `fieldCream` | `#fff8ec` | Feldinnenfläche |
-| `deepGreen` | `#0f5a3d` | Akzente, Buttons, Häuser |
-| `blackLine` | `#111111` | Rahmenlinien |
-| `anthracite` | `#252a2c` | UI, Text, Sekundärrahmen |
-| `goldAccent` | `#b8924b` | Highlights, Hotels |
-| `mutedCityBlue` | `#3d6375` | Stadtmotive, Wasserelemente |
-| `eventOrange` | `#e8820c` | Ereigniskarten/-felder |
-| `communityGreen` | `#2d7a4f` | Gemeinschaftskarten/-felder |
-
----
-
-## Aktueller technischer Stand
-
-- Dependency-freier Vanilla-JS-Prototyp, kein Framework, kein Build-Tool außer npm-Skripten.
-- 11×11 CSS-Grid für ein quadratisches 40-Felder-Board.
-- `src/data/boardSpaces.js` — austauschbare Duisburg-Beispielfelder (Platzhalter).
-- `src/config/assetMap.js` — zentrale Asset-Pfad-Registry.
-- `data/assets_manifest.json` — Asset-Liste mit Bildgenerierungs-Prompts im cinematic Stil.
-- `data/board.config.json` — Board-Metadaten, Designrichtung, Farbpalette, TODOs.
-- `scripts/validate-project.js` — prüft Board- und Asset-Konfiguration.
-
----
-
-## Ordnerstruktur
+## Projektstruktur
 
 ```text
 assets/
-  board/     # Board-Zentrum PNG, Eckfeld-PNGs
-  tiles/     # Feld-Tile-PNGs (Grundstück, Bahnhof, Werk, Ereignis, Gemeinschaft, Steuer)
-  icons/     # Duisburg-Ortsbilder / Mini-Location-Assets (je Grundstück)
-  tokens/    # Spielfiguren-PNGs
-  cards/     # Ereignis-/Gemeinschaftskarten-Assets (Vorder-/Rückseite)
-  ui/        # Würfel, Buttons, Geldsymbol, Dialog-/Panel-Hintergründe
+  board/     # Board Base und spaetere Board-Assets
+  tiles/     # 40 finale Feld-Tile-PNGs, nummeriert 0 bis 39
+  icons/     # optionale Orts-/Themen-Icons
+  tokens/    # 8 Spielfiguren als transparente PNGs
+  cards/     # spaetere Kartenfronten/-rueckseiten
+  ui/        # spaetere UI-Assets wie Wuerfel, Geldsymbol, Buttons
 
 data/
-  assets_manifest.json  # Asset-Liste mit cinematic Duisburg-Prompts
-  board.config.json     # Projekt-, Layout-, Design- und Farbkonfiguration
+  assets.manifest.json  # Asset-Pfade, Status und Stil-Prompts
+  board.config.json     # Board-Metadaten, Stil, Palette und TODOs
 
 src/
   config/assetMap.js    # zentrale Asset-Pfad-Registry
-  data/boardSpaces.js   # 40-Felder-Struktur mit Platzhaltern
-  game/                 # Spielregeln, Würfel, Besitz, Mieten (geplant)
-  ui/                   # UI-Komponenten (PlayerDashboard, CardOverlay, PropertyCard, TradeDialog)
-  main.js               # Vanilla-JS-Rendering
-  styles.css            # Board-Optik und responsive Platzhalter
+  data/boardSpaces.js   # 40 Spielfelder und Spielerstartdaten
+  game/                 # reserviert fuer kuenftige Spiellogik
+  ui/                   # reserviert fuer kuenftige UI-Komponenten
+  main.js               # lauffaehiger Vanilla-JS-Prototyp
+  styles.css            # responsive Board-Layout und UI-Styling
 ```
 
----
+## Stilrichtung
 
-## Board-Struktur
+Die visuelle Richtung ist eine private "cinematic Duisburg City Edition": reale Duisburg-Motive, Foto-Collage, klare Brettspielkanten, starke Kontraste und ein hochwertiger, urbaner Look. Wichtige Referenzen sind Innenhafen, Tiger & Turtle, Landschaftspark, Stahl-/Industriekultur, Rhein-Skyline, Stadtteile und lokale Mobilitaet.
 
-Klassischer Monopoly-artiger Aufbau, 40 Felder:
+Leitplanken fuer neue Assets:
 
-- 4 Eckfelder: Los/Start, Gefängnis/Nur zu Besuch, Frei Parken, Gehe ins Gefängnis
-- 22 Grundstücke/Orte mit 8 Farbgruppen, Kaufpreisen und Mieten
-- 4 Bahnhöfe / Duisburger Mobilitätsfelder
-- 2 Werke / Duisburger Infrastrukturfelder
-- 3 Ereignisfelder, 3 Gemeinschaftsfelder, 2 Steuerfelder
-
----
-
-## UI-Komponenten (geplant in src/ui/)
-
-| Datei | Beschreibung |
-|---|---|
-| `PlayerDashboard.js` | Spieler-Panel: Name, Kontostand, Grundstücke, Würfel-Button, Status |
-| `PropertyCard.js` | Kaufdialog: Grundstückskarte mit Farbstreifen, Foto, Preis, Miettabelle |
-| `CardOverlay.js` | Karten-Modal: Ereignis (orange) und Gemeinschaft (grün) mit Animation |
-| `TradeDialog.js` | Handels-Interface: zweispaltig, Ich biete / Du bietest |
-
-Alle Komponenten: Vanilla JS, kein Framework, kompatibel mit 11×11 CSS-Grid.
-
----
+- Cremefarbene Felder und klare anthrazit/schwarze Linien.
+- Tiefe Gruen-, Stadtblau-, Gold- und Orange-Akzente.
+- Foto-inspirierte Motive statt generischer Symbole.
+- Keine offiziellen Logos, keine heruntergeladenen Original-Grafiken, keine eingebrannten lesbaren Texte.
+- Bildassets sollen Platz fuer Frontend-Text lassen.
 
 ## Asset-Workflow
 
-1. `data/assets_manifest.json` öffnen.
-2. Pro Asset den hinterlegten `prompt` in einem KI-Bildgenerator verwenden (Midjourney, Flux, Ideogram, Gemini etc.).
-3. PNG exakt unter dem angegebenen `path` speichern, z.B. `assets/icons/icon_harbor.png`.
-4. `status` im Manifest von `"planned"` auf `"generated"` ändern.
-5. Code muss für reine Asset-Ersetzungen nicht geändert werden, solange Dateipfade gleich bleiben.
-
----
-
-## Inhalte, die später eingetragen werden
-
-- Finaler Straßen-/Ortsplan mit Reihenfolge auf dem Board
-- Duisburger Mobilitätsfelder (Bahnhöfe-Ersatz)
-- Infrastrukturfelder (Wasser-/Stromwerk-Ersatz)
-- Ereigniskarten mit finalen Texten und Effekten
-- Gemeinschaftskarten mit finalen Texten und Effekten
-- Finale Spielfiguren und Spielerfarben
-- Preise, Mieten, Haus-/Hotelkosten und Balancing
-
----
+1. `data/assets.manifest.json` ist die Quelle fuer Asset-Pfade, Status und Stil-Prompts.
+2. Neue Assets werden unter den dort angegebenen Pfaden abgelegt.
+3. `src/config/assetMap.js` bleibt die technische Registry fuer das Frontend.
+4. Feld-Tiles bleiben nummeriert: `assets/tiles/0.png` bis `assets/tiles/39.png`.
+5. Board Base und Tokens behalten ihre aktuellen Pfade, damit Rendering und Build stabil bleiben.
+6. Nach Asset-Aenderungen immer `npm run build` ausfuehren.
 
 ## Entwicklung
 
 ```bash
-npm run dev      # startet statischen Dev-Server
-npm run build    # validiert Datenmodell und Asset-Konfiguration
+npm run dev
+npm run build
 ```
+
+## Naechste Inhalte
+
+- Finale Strassen-/Ortsliste mit Preisen, Mieten und Farbgruppen abstimmen.
+- Karten fuer Ereignis- und Gemeinschaftsfelder als Datenmodell schreiben.
+- Kauf, Miete, Besitzstatus, Hypotheken, Haeuser/Hotels und Startbonus implementieren.
+- Wuerfellogik, Spielerzuege und Rundenzustand ausbauen.
+- Mobile Felddetailansicht und Spielprotokoll ergaenzen.
+- Finale Asset-Qualitaet fuer Karten, UI-Elemente und optionale Detailbilder festlegen.
