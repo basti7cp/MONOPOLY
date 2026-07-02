@@ -53,9 +53,13 @@ function renderSpace(space) {
 }
 
 function renderApp() {
-  const assetCount = Object.values(assetMap).reduce((sum, group) => sum + Object.keys(group).length, 0);
-  const boardIsValid = validateBoardSpaces();
+  validateBoardSpaces();
   const boardBase = assetMap.board.boardBase;
+  const activePlayer = demoPlayers[0];
+  const currentSpace = boardSpaces.find((space) => space.index === activePlayer.position);
+  const lastDiceRoll = { dice: [3, 4], total: 7 };
+  const playerStatus = currentSpace?.price ? 'Kauf möglich' : 'Bitte würfeln';
+  const currentPositionLabel = currentSpace ? `${currentSpace.index} · ${currentSpace.name}` : `Feld ${activePlayer.position}`;
   document.getElementById('root').innerHTML = `
     <main class="app-shell">
       <section class="hero">
@@ -70,19 +74,39 @@ function renderApp() {
           </div>
           ${boardSpaces.map(renderSpace).join('')}
         </div>
-        <aside class="panel">
-          <h2>Projektbasis</h2>
-          <ul>
-            <li>${boardSpaces.length} Felder modelliert (${boardIsValid ? 'validiert' : 'prüfen'})</li>
-            <li>${assetCount} Asset-Pfade registriert</li>
-            <li>${demoPlayers.length} Beispiel-Token platziert</li>
-          </ul>
-          <h3>Nächste TODOs</h3>
-          <ol>
-            <li>Kauf-, Miet-, Würfel- und Kartenlogik ergänzen.</li>
-            <li>Kartenstapel für Ereignis- und Kiezkarten als Datenmodell ergänzen.</li>
-            <li>Mobile Detailansicht für einzelne Felder ausbauen.</li>
-          </ol>
+        <aside class="panel" aria-label="Spieler-Dashboard">
+          <h2>Spieler-Dashboard</h2>
+          <section class="player-dashboard" aria-live="polite">
+            <header class="player-dashboard__header">
+              <span class="token" style="--token-color:${activePlayer.color}" aria-hidden="true">
+                <img class="token__image" src="${escapeHtml(assetMap.tokens[activePlayer.token])}" alt="" />
+              </span>
+              <div>
+                <p class="eyebrow">Aktiver Spieler</p>
+                <h3>${escapeHtml(activePlayer.name)}</h3>
+              </div>
+            </header>
+            <dl class="player-dashboard__stats">
+              <div>
+                <dt>Kontostand</dt>
+                <dd>₡ ${activePlayer.cash.toLocaleString('de-DE')}</dd>
+              </div>
+              <div>
+                <dt>Position</dt>
+                <dd>${escapeHtml(currentPositionLabel)}</dd>
+              </div>
+              <div>
+                <dt>Letzter Würfelwurf</dt>
+                <dd>${lastDiceRoll.dice.join(' + ')} = ${lastDiceRoll.total}</dd>
+              </div>
+            </dl>
+            <p class="player-dashboard__status">${escapeHtml(playerStatus)}</p>
+            <div class="player-dashboard__actions" aria-label="Spielaktionen">
+              <button type="button">Würfeln</button>
+              <button type="button" ${currentSpace?.price ? '' : 'disabled'}>Kaufen</button>
+              <button type="button">Zug beenden</button>
+            </div>
+          </section>
         </aside>
       </section>
     </main>`;
