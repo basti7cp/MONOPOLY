@@ -92,10 +92,10 @@ if (!validateBoardSpaces(boardSpaces)) errors.push('Board must contain exactly 4
 if (plannedAssetMapCount !== manifest.assets.length) errors.push(`planned assetMap count ${plannedAssetMapCount} does not match manifest count ${manifest.assets.length}.`);
 if (numberedTileEntries.length !== 40) errors.push(`assetMap.tiles must register 40 numbered board tiles, found ${numberedTileEntries.length}.`);
 for (const space of boardSpaces) {
-  const expectedPath = `/assets/tiles/${space.index}.png`;
+  const expectedPath = `assets/tiles/${space.index}.png`;
   if (space.tileImage !== expectedPath) errors.push(`Space ${space.index} must use tile image ${expectedPath}.`);
   if (assetMap.tiles[`space${space.index}`] !== expectedPath) errors.push(`assetMap.tiles.space${space.index} must be ${expectedPath}.`);
-  if (!fs.existsSync(`.${expectedPath}`)) errors.push(`Tile image ${expectedPath} is missing.`);
+  if (!fs.existsSync(expectedPath)) errors.push(`Tile image ${expectedPath} is missing.`);
 }
 for (const asset of manifest.assets) {
   if (!asset.path || !asset.prompt) errors.push(`Asset ${asset.id} is missing path or prompt.`);
@@ -103,18 +103,18 @@ for (const asset of manifest.assets) {
 for (const assetPath of requiredAssetFiles) {
   if (!assetPath) {
     errors.push('A required board or token asset is not registered in assetMap.');
-  } else if (!fs.existsSync(`.${assetPath}`)) {
+  } else if (!fs.existsSync(assetPath)) {
     errors.push(`Required asset ${assetPath} is missing.`);
   }
 }
-if (fs.existsSync(`.${assetMap.board.boardBase}`)) {
-  const boardBaseInfo = readPngInfo(`.${assetMap.board.boardBase}`);
+if (fs.existsSync(assetMap.board.boardBase)) {
+  const boardBaseInfo = readPngInfo(assetMap.board.boardBase);
   if (boardBaseInfo.width >= 1000 || boardBaseInfo.height >= 1000) {
     errors.push(`Board base should be cropped below 1000px, found ${boardBaseInfo.width}x${boardBaseInfo.height}.`);
   }
 }
 for (const tokenPath of Object.values(assetMap.tokens)) {
-  if (fs.existsSync(`.${tokenPath}`) && countTransparentPixels(`.${tokenPath}`) === 0) {
+  if (fs.existsSync(tokenPath) && countTransparentPixels(tokenPath) === 0) {
     errors.push(`Token asset ${tokenPath} must contain transparent background pixels.`);
   }
 }
